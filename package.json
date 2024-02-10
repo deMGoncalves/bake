@@ -1,11 +1,22 @@
 {
-  "name": "bake",
-  "module": "index.ts",
-  "type": "module",
+  "dependencies": {
+    "lexer": "workspace:*",
+    "parser": "workspace:*"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
+  "module": "src/index.ts",
+  "name": "bake",
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "private": true,
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ]
 }
