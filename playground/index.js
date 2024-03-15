@@ -1,1 +1,1 @@
-const hello = 'Hello Bake!'
+()

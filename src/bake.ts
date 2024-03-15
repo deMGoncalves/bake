@@ -5,7 +5,7 @@ class Bake {
   static async run (path: string): Promise<void> {
     const sourceCode: SourceCode = await SourceCode.from(path)
     const tokens: Array<Token> = Scanner.run(sourceCode)
-    console.log(tokens)
+    console.table(tokens)
   }
 }
 

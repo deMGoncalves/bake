@@ -1,14 +1,14 @@
 import SourceCode from 'sourceCode'
 import Token from './token'
 
-class LeftParen extends Token {
+class RightParen extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new LeftParen(sourceCode.current)
+    return new RightParen(sourceCode.current)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return /\(/.test(sourceCode.current.value)
+    return /\)/.test(sourceCode.current.value)
   }
 }
 
-export default LeftParen
+export default RightParen
