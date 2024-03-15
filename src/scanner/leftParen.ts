@@ -6,8 +6,8 @@ class LeftParen extends Token {
     return new LeftParen()
   }
 
-  static is (_sourceCode: SourceCode): boolean {
-    return false
+  static is (sourceCode: SourceCode): boolean {
+    return /\(/.test(sourceCode.current.value)
   }
 }
 

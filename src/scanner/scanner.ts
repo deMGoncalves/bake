@@ -4,10 +4,11 @@ import Token from './token'
 
 class Scanner {
   static run (sourceCode: SourceCode): Array<Token> {
-    const tokens: Array<Tokens> = []
+    const tokens: Array<Token> = []
 
-    while (sourceCode.atEnd) {
+    while (!sourceCode.done) {
       if (LeftParen.is(sourceCode)) tokens.push(LeftParen.from(sourceCode))
+      sourceCode.next()
     }
 
     return tokens
