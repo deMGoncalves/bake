@@ -1,4 +1,3 @@
-import type { BunFile } from "bun"
 import Scanner, { Token } from 'scanner'
 import SourceCode from 'sourceCode'
 
