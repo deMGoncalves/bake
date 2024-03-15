@@ -1,5 +1,5 @@
 import LeftParen from './leftParen'
-import SourceCode from '@sourceCode'
+import SourceCode from 'sourceCode'
 import Token from './token'
 
 class Scanner {
