@@ -1,4 +1,4 @@
-import SourceCode from '@/sourceCode'
+import SourceCode from '@sourceCode'
 import Token from './token'
 
 class LeftParen extends Token {

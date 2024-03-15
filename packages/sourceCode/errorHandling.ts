@@ -1,5 +1,5 @@
 function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
-  const originalMethod = descriptor.value
+  const method = descriptor.value
 
   Object.assign(descriptor, {
     value () {
@@ -7,7 +7,7 @@ function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyD
         throw new Error('Source code has reached the end.');
       }
 
-      return Reflect.apply(originalMethod, this, [])
+      return Reflect.apply(method, this, [])
     }
   })
 

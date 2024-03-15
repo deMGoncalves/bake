@@ -1,6 +1,6 @@
 import type { BunFile } from "bun"
-import Scanner, { Token } from './scanner'
-import SourceCode from "./sourceCode"
+import Scanner, { Token } from 'scanner'
+import SourceCode from 'sourceCode'
 
 class Bake {
   static async run (path: string): Promise<void> {

@@ -2,7 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "allowImportingTsExtensions": true,
-    "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ESNext"],
     "module": "ESNext",
@@ -10,9 +9,6 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",

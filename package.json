@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "lexer": "workspace:*",
-    "parser": "workspace:*"
+    "scanner": "workspace:*",
+    "sourceCode": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "latest"
