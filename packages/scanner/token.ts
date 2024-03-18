@@ -16,7 +16,7 @@ abstract class Token {
     return this.character.value
   }
 
-  constructor (private character: Character) {
+  constructor (character: Character) {
     this.character = character
   }
 
