@@ -20,6 +20,11 @@ abstract class Token {
     this.character = character
   }
 
+  subscribe (tokens: Array<Token>): Token {
+    tokens.push(this)
+    return this
+  }
+
   abstract static from (sourceCode: SourceCode): Token
   abstract static is (sourceCode: SourceCode): boolean
 }

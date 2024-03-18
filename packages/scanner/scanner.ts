@@ -9,9 +9,15 @@ class Scanner {
     const tokens: Array<Token> = []
 
     while (!sourceCode.done) {
-      if (LeftParen.is(sourceCode)) tokens.push(LeftParen.from(sourceCode))
-      if (RightParen.is(sourceCode)) tokens.push(RightParen.from(sourceCode))
-      if (LeftBrace.is(sourceCode)) tokens.push(LeftBrace.from(sourceCode))
+      [
+        LeftParen,
+        RightParen,
+        LeftBrace
+      ]
+        .find((token) => token.is(sourceCode))
+        ?.from(sourceCode)
+        ?.subscribe(tokens)
+
       sourceCode.next()
     }
 
