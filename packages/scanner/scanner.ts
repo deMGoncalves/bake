@@ -1,3 +1,4 @@
+import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
 import RightParen from './rightParen'
 import SourceCode from 'sourceCode'
@@ -10,6 +11,7 @@ class Scanner {
     while (!sourceCode.done) {
       if (LeftParen.is(sourceCode)) tokens.push(LeftParen.from(sourceCode))
       if (RightParen.is(sourceCode)) tokens.push(RightParen.from(sourceCode))
+      if (LeftBrace.is(sourceCode)) tokens.push(LeftBrace.from(sourceCode))
       sourceCode.next()
     }
 
