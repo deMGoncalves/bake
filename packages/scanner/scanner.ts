@@ -8,6 +8,7 @@ import RightBrace from './rightBrace'
 import RightParen from './rightParen'
 import Semicolon from './semicolon'
 import SourceCode from 'sourceCode'
+import Star from './star'
 import Token from './token'
 
 class Scanner {
@@ -22,7 +23,8 @@ class Scanner {
         Dot,
         Semicolon,
         Minus,
-        Plus
+        Plus,
+        Star
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
