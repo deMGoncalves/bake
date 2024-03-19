@@ -4,6 +4,7 @@ import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
 import RightBrace from './rightBrace'
 import RightParen from './rightParen'
+import Semicolon from './semicolon'
 import SourceCode from 'sourceCode'
 import Token from './token'
 
@@ -13,12 +14,11 @@ class Scanner {
 
     while (!sourceCode.done) {
       [
-        LeftParen,
-        RightParen,
-        LeftBrace,
-        RightBrace,
+        LeftParen, RightParen,
+        LeftBrace, RightBrace,
         Comma,
-        Dot
+        Dot,
+        Semicolon
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
