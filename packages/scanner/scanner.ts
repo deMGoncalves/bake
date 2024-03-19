@@ -2,6 +2,7 @@ import Comma from './comma'
 import Dot from './dot'
 import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
+import Minus from './minus'
 import RightBrace from './rightBrace'
 import RightParen from './rightParen'
 import Semicolon from './semicolon'
@@ -18,7 +19,8 @@ class Scanner {
         LeftBrace, RightBrace,
         Comma,
         Dot,
-        Semicolon
+        Semicolon,
+        Minus
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
