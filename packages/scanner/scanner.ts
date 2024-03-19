@@ -1,3 +1,4 @@
+import Comma from './comma'
 import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
 import RightBrace from './rightBrace'
@@ -14,7 +15,8 @@ class Scanner {
         LeftParen,
         RightParen,
         LeftBrace,
-        RightBrace
+        RightBrace,
+        Comma
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
