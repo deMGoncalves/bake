@@ -12,7 +12,7 @@ class Scanner {
   static run (sourceCode: SourceCode): Array<Token> {
     const tokens: Array<Token> = []
 
-    while (!sourceCode.done) {
+    while (sourceCode.notDone) {
       [
         LeftParen, RightParen,
         LeftBrace, RightBrace,

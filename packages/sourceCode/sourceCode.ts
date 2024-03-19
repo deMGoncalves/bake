@@ -18,8 +18,8 @@ class SourceCode {
     }
   }
 
-  get done (): boolean {
-    return (this.cursor >= this.length)
+  get notDone (): boolean {
+    return (this.cursor < this.length)
   }
 
   private get value (): string {
