@@ -9,7 +9,7 @@
   "module": "src/index.ts",
   "name": "bake",
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.3"
   },
   "private": true,
   "scripts": {
