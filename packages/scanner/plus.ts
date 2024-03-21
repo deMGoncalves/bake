@@ -1,13 +1,14 @@
 import SourceCode from 'sourceCode'
 import Token from './token'
+import TokenType from './tokenType'
 
 class Plus extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new Plus(sourceCode.current)
+    return new Plus(sourceCode.current, TokenType.PLUS)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return /\+/.test(sourceCode.current.value)
+    return sourceCode.current.value === '+'
   }
 }
 

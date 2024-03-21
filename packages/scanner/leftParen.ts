@@ -1,13 +1,14 @@
 import SourceCode from 'sourceCode'
 import Token from './token'
+import TokenType from './tokenType'
 
 class LeftParen extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new LeftParen(sourceCode.current)
+    return new LeftParen(sourceCode.current, TokenType.LEFT_PAREN)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return /\(/.test(sourceCode.current.value)
+    return sourceCode.current.value === '('
   }
 }
 

@@ -1,13 +1,14 @@
 import SourceCode from 'sourceCode'
 import Token from './token'
+import TokenType from './tokenType'
 
 class LeftBrace extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new LeftBrace(sourceCode.current)
+    return new LeftBrace(sourceCode.current, TokenType.LEFT_BRACE)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return /{/.test(sourceCode.current.value)
+    return sourceCode.current.value === '{'
   }
 }
 

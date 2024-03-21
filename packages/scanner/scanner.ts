@@ -17,13 +17,15 @@ class Scanner {
 
     while (sourceCode.notDone) {
       [
+        // Single-character tokens
         LeftParen, RightParen,
         LeftBrace, RightBrace,
         Comma,
         Dot,
-        Semicolon,
         Minus,
         Plus,
+        Semicolon,
+        // Slash,
         Star
       ]
         .find((token) => token.is(sourceCode))

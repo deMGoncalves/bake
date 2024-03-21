@@ -1,3 +1,5 @@
+import type SourceCode from "./sourceCode";
+
 function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
   const method = descriptor.value
 
