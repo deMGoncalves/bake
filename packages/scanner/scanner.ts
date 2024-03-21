@@ -30,7 +30,7 @@ class Scanner {
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
-        ?.subscribe(tokens)
+        ?.subscribeIn(tokens)
 
       sourceCode.next()
     }

@@ -24,7 +24,7 @@ abstract class Token {
     this.type = type
   }
 
-  subscribe (tokens: Array<Token>): Token {
+  subscribeIn (tokens: Array<Token>): Token {
     tokens.push(this)
     return this
   }
