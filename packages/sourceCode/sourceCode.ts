@@ -1,6 +1,7 @@
 import type { BunFile } from 'bun'
 import type { Character } from './character'
 import errorHandling from './errorHandling'
+import indexOf from './indexOf'
 import NewLine from './newLine'
 
 class SourceCode {
@@ -22,7 +23,7 @@ class SourceCode {
   }
 
   private get value (): string {
-    return this.text[(this.cursor - 1)]
+    return this.text[indexOf(this.cursor)]
   }
 
   constructor (text: string) {
@@ -30,8 +31,9 @@ class SourceCode {
     this.length = text.length
   }
 
-  lookahead (end: number = 1): string {
-    return this.text.slice(this.cursor - 1, end)
+  lookAhead (end: number = 1): string {
+    const start = indexOf(this.cursor)
+    return this.text.slice(start, end)
   }
 
   @errorHandling
