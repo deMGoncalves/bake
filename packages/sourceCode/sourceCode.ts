@@ -12,14 +12,9 @@ class SourceCode {
   get current (): Character {
     return {
       cursor: this.cursor,
-      done: this.done,
       line: this.line,
       value: this.value
     }
-  }
-
-  get done (): boolean {
-    return (this.cursor >= this.length)
   }
 
   get notDone (): boolean {
@@ -35,6 +30,10 @@ class SourceCode {
     this.length = text.length
   }
 
+  lookahead (end: number = 1): string {
+    return this.text.slice(this.cursor - 1, end)
+  }
+
   @errorHandling
   next (): SourceCode {
     if (NewLine.is(this.value)) {
@@ -42,7 +41,6 @@ class SourceCode {
     }
 
     this.cursor++
-
     return this
   }
 
