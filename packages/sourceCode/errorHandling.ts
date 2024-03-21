@@ -3,7 +3,7 @@ function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyD
 
   Object.assign(descriptor, {
     value () {
-      if (this.done) {
+      if (!this.notDone) {
         throw new Error('Source code has reached the end.');
       }
 
