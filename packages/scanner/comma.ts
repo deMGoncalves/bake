@@ -1,4 +1,4 @@
-import SourceCode from 'sourceCode'
+import type SourceCode from 'sourceCode'
 import Token from './token'
 import TokenType from './tokenType'
 

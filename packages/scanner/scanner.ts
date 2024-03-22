@@ -1,3 +1,4 @@
+import Bang from './bang'
 import Comma from './comma'
 import Dot from './dot'
 import LeftBrace from './leftBrace'
@@ -26,7 +27,11 @@ class Scanner {
         Plus,
         Semicolon,
         // Slash,
-        Star
+        Star,
+
+
+        // One or two character tokens
+        Bang
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
