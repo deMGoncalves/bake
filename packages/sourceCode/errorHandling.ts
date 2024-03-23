@@ -1,9 +1,11 @@
+import SourceCode from './sourceCode'
+
 function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
   const method = descriptor.value
 
   Object.assign(descriptor, {
     value () {
-      if (this.notDone) {
+      if (((this as unknown) as SourceCode).notDone) {
         return Reflect.apply(method, this, [])
       }
 
