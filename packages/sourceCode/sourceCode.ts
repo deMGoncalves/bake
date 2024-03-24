@@ -1,21 +1,23 @@
+// linha e cursor deve ser uma classe e delegar para elas 
+// as reponsabilidades de contagem
 import type { BunFile } from 'bun'
 import type { Character } from './character'
 import errorHandling from './errorHandling'
-import indexOf from './indexOf'
 import NewLine from './newLine'
 
 class SourceCode {
   private cursor: number = 1
+  private index: number = 0
   private line: number = 1
   private length: number
   private text: string
 
   get notDone (): boolean {
-    return (this.cursor < this.length)
+    return (this.index < this.length)
   }
 
   get peek(): Character {
-    return this.text[indexOf(this.cursor)]
+    return this.text[this.index]
   }
 
   constructor (text: string) {
@@ -23,27 +25,38 @@ class SourceCode {
     this.length = text.length
   }
 
+  @errorHandling
+  lineFeed (): SourceCode {
+    this.line += 1
+    this.cursor = 1
+    this.index += 1
+    return this
+  }
+
   lookAhead (end: number = 1): string {
-    return this.text.slice(indexOf(this.cursor), end)
+    return this.text.slice(this.index, end)
+  }
+
+  @errorHandling
+  next (): SourceCode {
+    this.cursor += 1
+    this.index += 1
+    return this
   }
 
   @errorHandling
   shift (): Character {
-    if (NewLine.is(this.value)) {
-      this.line++
-    }
-
     return {
-      cursor: this.cursor,
+      cursor: this.cursor++,
       line: this.line,
-      value: this.text[indexOf(this.cursor++)]
+      value: this.text[this.index++]
     }
   }
 
   take (_end: number = 1): Character {
     return {
-      cursor: 0,
-      line: 0,
+      cursor: -1,
+      line: -1,
       value: ''
     }
   }
