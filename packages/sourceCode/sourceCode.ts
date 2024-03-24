@@ -42,7 +42,7 @@ class SourceCode {
 
   take (_end: number = 1): Character {
     return {
-      cursor: 0
+      cursor: 0,
       line: 0,
       value: ''
     }
