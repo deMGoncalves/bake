@@ -4,11 +4,11 @@ import TokenType from './tokenType'
 
 class Dot extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new Dot(sourceCode.current, TokenType.DOT)
+    return new Dot(sourceCode.shift(), TokenType.DOT)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return sourceCode.current.value === '.'
+    return sourceCode.peek === '.'
   }
 }
 

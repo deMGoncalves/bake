@@ -4,11 +4,11 @@ import TokenType from './tokenType'
 
 class Bang extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new Bang(sourceCode.current, TokenType.BANG)
+    return new Bang(sourceCode.shift(), TokenType.BANG)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return sourceCode.current.value === '!'
+    return sourceCode.peek === '!'
   }
 }
 

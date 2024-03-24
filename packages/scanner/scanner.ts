@@ -36,8 +36,6 @@ class Scanner {
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)
         ?.subscribeIn(tokens)
-
-      sourceCode.next()
     }
 
     return tokens

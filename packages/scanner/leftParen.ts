@@ -4,11 +4,11 @@ import TokenType from './tokenType'
 
 class LeftParen extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new LeftParen(sourceCode.current, TokenType.LEFT_PAREN)
+    return new LeftParen(sourceCode.shift(), TokenType.LEFT_PAREN)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return sourceCode.current.value === '('
+    return sourceCode.peek === '('
   }
 }
 

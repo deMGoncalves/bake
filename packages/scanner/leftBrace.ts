@@ -4,11 +4,11 @@ import TokenType from './tokenType'
 
 class LeftBrace extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new LeftBrace(sourceCode.current, TokenType.LEFT_BRACE)
+    return new LeftBrace(sourceCode.shift(), TokenType.LEFT_BRACE)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return sourceCode.current.value === '{'
+    return sourceCode.peek === '{'
   }
 }
 

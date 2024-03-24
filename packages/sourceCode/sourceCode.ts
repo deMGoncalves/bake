@@ -10,19 +10,11 @@ class SourceCode {
   private length: number
   private text: string
 
-  get current (): Character {
-    return {
-      cursor: this.cursor,
-      line: this.line,
-      value: this.value
-    }
-  }
-
   get notDone (): boolean {
     return (this.cursor < this.length)
   }
 
-  private get value (): string {
+  get peek(): Character {
     return this.text[indexOf(this.cursor)]
   }
 
@@ -32,18 +24,28 @@ class SourceCode {
   }
 
   lookAhead (end: number = 1): string {
-    const start = indexOf(this.cursor)
-    return this.text.slice(start, end)
+    return this.text.slice(indexOf(this.cursor), end)
   }
 
   @errorHandling
-  next (): SourceCode {
+  shift (): Character {
     if (NewLine.is(this.value)) {
       this.line++
     }
 
-    this.cursor++
-    return this
+    return {
+      cursor: this.cursor,
+      line: this.line,
+      value: this.text[indexOf(this.cursor++)]
+    }
+  }
+
+  take (_end: number = 1): Character {
+    return {
+      cursor: 0
+      line: 0,
+      value: ''
+    }
   }
 
   static async from (path: string): Promise<SourceCode> {
