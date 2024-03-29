@@ -1,9 +1,6 @@
-// linha e cursor deve ser uma classe e delegar para elas 
-// as reponsabilidades de contagem
 import type { BunFile } from 'bun'
 import type { Character } from './character'
-import errorHandling from './errorHandling'
-import NewLine from './newLine'
+import checkBounds from './checkBounds'
 
 class SourceCode {
   private cursor: number = 1
@@ -16,7 +13,7 @@ class SourceCode {
     return (this.index < this.length)
   }
 
-  get peek(): Character {
+  get peek (): string {
     return this.text[this.index]
   }
 
@@ -25,11 +22,16 @@ class SourceCode {
     this.length = text.length
   }
 
-  @errorHandling
-  lineFeed (): SourceCode {
+  enter (): SourceCode {
     this.line += 1
     this.cursor = 1
     this.index += 1
+    return this
+  }
+
+  jump (n: number = 1): SourceCode {
+    this.cursor += n
+    this.index += n
     return this
   }
 
@@ -37,28 +39,36 @@ class SourceCode {
     return this.text.slice(this.index, end)
   }
 
-  @errorHandling
   next (): SourceCode {
     this.cursor += 1
     this.index += 1
     return this
   }
 
-  @errorHandling
+  @checkBounds
   shift (): Character {
-    return {
-      cursor: this.cursor++,
+    const character: Character = {
+      cursor: this.cursor,
       line: this.line,
-      value: this.text[this.index++]
+      value: this.peek
     }
+
+    this.next()
+
+    return character
   }
 
-  take (_end: number = 1): Character {
-    return {
-      cursor: -1,
-      line: -1,
-      value: ''
+  @checkBounds
+  take (n: number = 1): Character {
+    const character: Character = {
+      cursor: this.cursor,
+      line: this.line,
+      value: this.lookAhead(n)
     }
+
+    this.jump(n)
+
+    return character
   }
 
   static async from (path: string): Promise<SourceCode> {

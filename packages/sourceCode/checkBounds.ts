@@ -1,6 +1,6 @@
 import SourceCode from './sourceCode'
 
-function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
+function checkBounds (_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
   const method = descriptor.value
 
   Object.assign(descriptor, {
@@ -16,4 +16,4 @@ function errorHandling(_target: any, _propertyKey: string, descriptor: PropertyD
   return descriptor
 }
 
-export default errorHandling
+export default checkBounds
