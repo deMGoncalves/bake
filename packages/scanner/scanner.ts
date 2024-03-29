@@ -1,4 +1,5 @@
 import Bang from './bang'
+import BangEqual from './bangEqual'
 import Comma from './comma'
 import Dot from './dot'
 import LeftBrace from './leftBrace'
@@ -31,7 +32,7 @@ class Scanner {
 
 
         // One or two character tokens
-        Bang
+        BangEqual, Bang
       ]
         .find((token) => token.is(sourceCode))
         ?.from(sourceCode)

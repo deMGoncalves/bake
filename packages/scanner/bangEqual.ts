@@ -4,11 +4,11 @@ import TokenType from './tokenType'
 
 class BangEqual extends Token {
   static from (sourceCode: SourceCode): Token {
-    return new BangEqual(sourceCode.take(), TokenType.BANG)
+    return new BangEqual(sourceCode.take(1), TokenType.BANG)
   }
 
   static is (sourceCode: SourceCode): boolean {
-    return sourceCode.lookAhead() === '!='
+    return sourceCode.lookAhead(1) === '!='
   }
 }
 
