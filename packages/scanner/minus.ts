@@ -3,7 +3,7 @@ import Token from './token'
 import TokenType from './tokenType'
 
 class Minus extends Token {
-  static from (sourceCode: SourceCode): Token {
+  static from (sourceCode: SourceCode): Minus {
     return new Minus(sourceCode.shift(), TokenType.MINUS)
   }
 

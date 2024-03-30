@@ -3,7 +3,7 @@ import Token from './token'
 import TokenType from './tokenType'
 
 class Star extends Token {
-  static from (sourceCode: SourceCode): Token {
+  static from (sourceCode: SourceCode): Star {
     return new Star(sourceCode.shift(), TokenType.STAR)
   }
 

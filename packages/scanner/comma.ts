@@ -3,7 +3,7 @@ import Token from './token'
 import TokenType from './tokenType'
 
 class Comma extends Token {
-  static from (sourceCode: SourceCode): Token {
+  static from (sourceCode: SourceCode): Comma {
     return new Comma(sourceCode.shift(), TokenType.COMMA)
   }
 

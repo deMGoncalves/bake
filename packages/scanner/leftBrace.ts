@@ -3,7 +3,7 @@ import Token from './token'
 import TokenType from './tokenType'
 
 class LeftBrace extends Token {
-  static from (sourceCode: SourceCode): Token {
+  static from (sourceCode: SourceCode): LeftBrace {
     return new LeftBrace(sourceCode.shift(), TokenType.LEFT_BRACE)
   }
 

@@ -3,7 +3,7 @@ import Token from './token'
 import TokenType from './tokenType'
 
 class LeftParen extends Token {
-  static from (sourceCode: SourceCode): Token {
+  static from (sourceCode: SourceCode): LeftParen {
     return new LeftParen(sourceCode.shift(), TokenType.LEFT_PAREN)
   }
 
