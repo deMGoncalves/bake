@@ -6,11 +6,10 @@ class SourceCode {
   private cursor: number = 1
   private index: number = 0
   private line: number = 1
-  private length: number
   private text: string
 
   get notDone (): boolean {
-    return (this.index < this.length)
+    return this.index < this.text.length
   }
 
   get peek (): string {
@@ -19,7 +18,6 @@ class SourceCode {
 
   constructor (text: string) {
     this.text = text
-    this.length = text.length
   }
 
   enter (): SourceCode {
