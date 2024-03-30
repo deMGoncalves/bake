@@ -6,7 +6,7 @@ function checkBounds (_target: any, _propertyKey: string, descriptor: PropertyDe
   Object.assign(descriptor, {
     value () {
       if (((this as unknown) as SourceCode).notDone) {
-        return Reflect.apply(method, this, [])
+        return Reflect.apply(method, this, arguments)
       }
 
       throw new Error('Source code has reached the end.')

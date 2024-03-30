@@ -27,14 +27,14 @@ class SourceCode {
     return this
   }
 
-  jump (n: number = 1): SourceCode {
+  jump (n: number = 0): SourceCode {
     this.cursor += n
     this.index += n
     return this
   }
 
-  lookAhead (end: number = 1): string {
-    return this.text.slice(this.index, end)
+  lookAhead (n: number = 0): string {
+    return this.text.slice(this.index, (this.index + n))
   }
 
   next (): SourceCode {
@@ -57,7 +57,7 @@ class SourceCode {
   }
 
   @checkBounds
-  take (n: number = 1): Character {
+  take (n: number = 0): Character {
     const character: Character = {
       cursor: this.cursor,
       line: this.line,

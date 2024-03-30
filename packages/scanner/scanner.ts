@@ -1,11 +1,13 @@
-import Bang from './bang'
-import BangEqual from './bangEqual'
+import Assignment from './assignment'
 import Comma from './comma'
 import Dot from './dot'
+import Equality from './equality'
 import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
+import Inequality from './inequality'
 import Minus from './minus'
 import NewLine from './newLine'
+import Not from './not'
 import Plus from './plus'
 import RightBrace from './rightBrace'
 import RightParen from './rightParen'
@@ -35,7 +37,8 @@ class Scanner {
 
 
         // One or two character tokens
-        BangEqual, Bang,
+        Inequality, Not,
+        Equality, Assignment,
 
         // Ignored characters
         NewLine,

@@ -2,9 +2,9 @@ import SourceCode from 'sourceCode'
 import Token from './token'
 import TokenType from './tokenType'
 
-class Bang extends Token {
-  static from (sourceCode: SourceCode): Bang {
-    return new Bang(sourceCode.shift(), TokenType.BANG)
+class Not extends Token {
+  static from (sourceCode: SourceCode): Not {
+    return new Not(sourceCode.shift(), TokenType.BANG)
   }
 
   static is (sourceCode: SourceCode): boolean {
@@ -12,4 +12,4 @@ class Bang extends Token {
   }
 }
 
-export default Bang
+export default Not
