@@ -11,8 +11,10 @@ enum TokenType {
   STAR,
 
   // One or two character tokens
-  BANG, INEQUALITY,
-  ASSIGNMENT, EQUAL_EQUAL,
+  ASSIGNMENT,
+  BANG,
+  EQUALITY,
+  INEQUALITY,
   GREATER, GREATER_EQUAL,
   LESS, LESS_EQUAL,
 
