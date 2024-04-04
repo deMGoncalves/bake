@@ -1,6 +1,6 @@
 import SourceCode from './sourceCode'
 
-function checkBounds (_target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
+function checkBounds (_target: any, _propertyKey: PropertyKey, descriptor: PropertyDescriptor) {
   const method = descriptor.value
 
   Object.assign(descriptor, {
