@@ -12,9 +12,9 @@ enum TokenType {
 
   // One or two character tokens
   ASSIGNMENT,
-  BANG,
   EQUALITY,
   INEQUALITY,
+  NOT,
   GREATER, GREATER_EQUAL,
   LESS, LESS_EQUAL,
 

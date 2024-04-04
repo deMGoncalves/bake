@@ -4,7 +4,7 @@ import TokenType from './tokenType'
 
 class Not extends Token {
   static from (sourceCode: SourceCode): Not {
-    return new Not(sourceCode.shift(), TokenType.BANG)
+    return new Not(sourceCode.shift(), TokenType.NOT)
   }
 
   static is (sourceCode: SourceCode): boolean {
