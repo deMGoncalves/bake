@@ -5,13 +5,13 @@ import Equality from './equality'
 import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
 import Inequality from './inequality'
-import Minus from './minus'
 import NewLine from './newLine'
 import Not from './not'
 import Plus from './plus'
 import RightBrace from './rightBrace'
 import RightParen from './rightParen'
 import Semicolon from './semicolon'
+import Subtraction from './subtraction'
 import SourceCode from 'sourceCode'
 import Star from './star'
 import Tab from './tab'
@@ -29,7 +29,7 @@ class Scanner {
         LeftBrace, RightBrace,
         Comma,
         Dot,
-        Minus,
+        Subtraction,
         Plus,
         Semicolon,
         // Slash,

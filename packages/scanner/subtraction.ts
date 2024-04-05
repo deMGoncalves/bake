@@ -2,9 +2,9 @@ import SourceCode from 'sourceCode'
 import Token from './token'
 import TokenType from './tokenType'
 
-class Minus extends Token {
-  static from (sourceCode: SourceCode): Minus {
-    return new Minus(sourceCode.shift(), TokenType.MINUS)
+class Subtraction extends Token {
+  static from (sourceCode: SourceCode): Subtraction {
+    return new Subtraction(sourceCode.shift(), TokenType.SUBTRACTION)
   }
 
   static is (sourceCode: SourceCode): boolean {
@@ -12,4 +12,4 @@ class Minus extends Token {
   }
 }
 
-export default Minus
+export default Subtraction
