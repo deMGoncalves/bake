@@ -1,3 +1,4 @@
+import Addition from './addition'
 import Assignment from './assignment'
 import Comma from './comma'
 import Dot from './dot'
@@ -7,7 +8,6 @@ import LeftParen from './leftParen'
 import Inequality from './inequality'
 import NewLine from './newLine'
 import Not from './not'
-import Plus from './plus'
 import RightBrace from './rightBrace'
 import RightParen from './rightParen'
 import Semicolon from './semicolon'
@@ -19,18 +19,20 @@ import Token from './token'
 import WhiteSpace from './whiteSpace'
 
 class Scanner {
-  static run (sourceCode: SourceCode): Array<Token> {
+  static run(sourceCode: SourceCode): Array<Token> {
     const tokens: Array<Token> = []
 
     while (sourceCode.notDone) {
       [
         // Single-character tokens
-        LeftParen, RightParen,
-        LeftBrace, RightBrace,
+        LeftBrace,
+        LeftParen,
+        RightBrace,
+        RightParen,
+        Addition,
         Comma,
         Dot,
         Subtraction,
-        Plus,
         Semicolon,
         // Slash,
         Star,
