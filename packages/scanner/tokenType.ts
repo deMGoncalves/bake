@@ -4,10 +4,10 @@ enum TokenType {
   LEFT_BRACE, RIGHT_BRACE,
   ADDITION,
   COMMA,
+  DIVISION,
   DOT,
   SUBTRACTION,
   SEMICOLON,
-  SLASH,
   STAR,
 
   // One or two character tokens

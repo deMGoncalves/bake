@@ -4,8 +4,8 @@ function checkBounds (_target: any, _propertyKey: PropertyKey, descriptor: Prope
   const method = descriptor.value
 
   Object.assign(descriptor, {
-    value () {
-      if (((this as unknown) as SourceCode).notDone) {
+    value (this: SourceCode) {
+      if (this.notDone) {
         return Reflect.apply(method, this, arguments)
       }
 

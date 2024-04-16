@@ -8,43 +8,43 @@ class SourceCode {
   private line: number = 1
   private text: string
 
-  get notDone (): boolean {
+  get notDone(): boolean {
     return this.index < this.text.length
   }
 
-  get peek (): string {
+  get peek(): string {
     return this.text[this.index]
   }
 
-  constructor (text: string) {
+  constructor(text: string) {
     this.text = text
   }
 
-  enter (): SourceCode {
+  enter(): SourceCode {
     this.line += 1
     this.cursor = 1
     this.index += 1
     return this
   }
 
-  jump (n: number = 0): SourceCode {
+  jump(n: number = 0): SourceCode {
     this.cursor += n
     this.index += n
     return this
   }
 
-  lookAhead (n: number = 0): string {
+  lookAhead(n: number = 0): string {
     return this.text.slice(this.index, (this.index + n))
   }
 
-  next (): SourceCode {
+  next(): SourceCode {
     this.cursor += 1
     this.index += 1
     return this
   }
 
   @checkBounds
-  shift (): Character {
+  shift(): Character {
     const character: Character = {
       cursor: this.cursor,
       line: this.line,
@@ -57,7 +57,7 @@ class SourceCode {
   }
 
   @checkBounds
-  take (n: number = 0): Character {
+  take(n: number = 0): Character {
     const character: Character = {
       cursor: this.cursor,
       line: this.line,
@@ -69,7 +69,7 @@ class SourceCode {
     return character
   }
 
-  static async from (path: string): Promise<SourceCode> {
+  static async from(path: string): Promise<SourceCode> {
     const file: BunFile = Bun.file(path)
     const text: string = await file.text()
     return new SourceCode(text)

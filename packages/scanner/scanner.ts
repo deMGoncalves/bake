@@ -1,6 +1,7 @@
 import Addition from './addition'
 import Assignment from './assignment'
 import Comma from './comma'
+import Division from './division'
 import Dot from './dot'
 import Equality from './equality'
 import LeftBrace from './leftBrace'
@@ -31,10 +32,10 @@ class Scanner {
         RightParen,
         Addition,
         Comma,
+        Division,
         Dot,
         Subtraction,
         Semicolon,
-        // Slash,
         Star,
 
 
