@@ -7,6 +7,7 @@ import Equality from './equality'
 import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
 import Inequality from './inequality'
+import Multiplication from './multiplication'
 import NewLine from './newLine'
 import Not from './not'
 import RightBrace from './rightBrace'
@@ -14,7 +15,6 @@ import RightParen from './rightParen'
 import Semicolon from './semicolon'
 import Subtraction from './subtraction'
 import SourceCode from 'sourceCode'
-import Star from './star'
 import Tab from './tab'
 import Token from './token'
 import WhiteSpace from './whiteSpace'
@@ -34,9 +34,9 @@ class Scanner {
         Comma,
         Division,
         Dot,
+        Multiplication,
         Subtraction,
         Semicolon,
-        Star,
 
 
         // One or two character tokens

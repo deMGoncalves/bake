@@ -6,9 +6,9 @@ enum TokenType {
   COMMA,
   DIVISION,
   DOT,
+  MULTIPLICATION,
   SUBTRACTION,
   SEMICOLON,
-  STAR,
 
   // One or two character tokens
   ASSIGNMENT,
