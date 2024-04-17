@@ -4,6 +4,8 @@ import Comma from './comma'
 import Division from './division'
 import Dot from './dot'
 import Equality from './equality'
+import GreaterThen from './greaterThen'
+import GreaterThenOrEqual from './greaterThenOrEqual'
 import LeftBrace from './leftBrace'
 import LeftParen from './leftParen'
 import Inequality from './inequality'
@@ -25,23 +27,24 @@ class Scanner {
 
     while (sourceCode.notDone) {
       [
-        // Single-character tokens
-        LeftBrace,
-        LeftParen,
-        RightBrace,
-        RightParen,
+        // Single character tokens
         Addition,
         Comma,
         Division,
         Dot,
+        LeftBrace,
+        LeftParen,
         Multiplication,
+        RightBrace,
+        RightParen,
         Subtraction,
         Semicolon,
 
 
-        // One or two character tokens
-        Inequality, Not,
+        // Many character tokens
         Equality, Assignment,
+        Inequality, Not,
+        GreaterThenOrEqual, GreaterThen,
 
         // Ignored characters
         NewLine,
