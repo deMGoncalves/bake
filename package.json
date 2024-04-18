@@ -4,6 +4,7 @@
     "sourceCode": "workspace:*"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.7.0",
     "@types/bun": "latest"
   },
   "module": "src/index.ts",
