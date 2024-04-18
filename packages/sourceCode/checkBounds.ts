@@ -1,19 +1,23 @@
-import SourceCode from './sourceCode'
+import type SourceCode from "./sourceCode";
 
-function checkBounds (_target: any, _propertyKey: PropertyKey, descriptor: PropertyDescriptor) {
-  const method = descriptor.value
+function checkBounds(
+  _target: any,
+  _propertyKey: PropertyKey,
+  descriptor: PropertyDescriptor,
+) {
+  const method = descriptor.value;
 
   Object.assign(descriptor, {
-    value (this: SourceCode) {
+    value(this: SourceCode) {
       if (this.notDone) {
-        return Reflect.apply(method, this, arguments)
+        return Reflect.apply(method, this, arguments);
       }
 
-      throw new Error('Source code has reached the end.')
-    }
-  })
+      throw new Error("Source code has reached the end.");
+    },
+  });
 
-  return descriptor
+  return descriptor;
 }
 
-export default checkBounds
+export default checkBounds;

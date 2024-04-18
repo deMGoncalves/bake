@@ -1,4 +1,4 @@
-import Bake from './bake'
+import Bake from "./bake";
 
-const [,, entryPoint]: string[] = process.argv
-Bake.run(entryPoint)
+const [, , entryPoint]: string[] = process.argv;
+Bake.run(entryPoint);

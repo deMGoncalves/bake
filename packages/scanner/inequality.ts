@@ -1,15 +1,15 @@
-import SourceCode from 'sourceCode'
-import Token from './token'
-import TokenType from './tokenType'
+import type SourceCode from "sourceCode";
+import Token from "./token";
+import TokenType from "./tokenType";
 
 class Inequality extends Token {
-  static from (sourceCode: SourceCode): Inequality {
-    return new Inequality(sourceCode.take(2), TokenType.INEQUALITY)
+  static from(sourceCode: SourceCode): Inequality {
+    return new Inequality(sourceCode.take(2), TokenType.INEQUALITY);
   }
 
-  static is (sourceCode: SourceCode): boolean {
-    return sourceCode.lookAhead(2) === '!='
+  static is(sourceCode: SourceCode): boolean {
+    return sourceCode.lookAhead(2) === "!=";
   }
 }
 
-export default Inequality
+export default Inequality;

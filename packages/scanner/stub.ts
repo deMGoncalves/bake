@@ -1,7 +1,7 @@
-import type Token from './token'
+import type Token from "./token";
 
 const stub = <Token>{
-  subscribeIn (_) { }
-}
+  subscribeIn(_) {},
+};
 
-export default stub
+export default stub;

@@ -1,37 +1,37 @@
-import type { Character } from 'sourceCode'
-import SourceCode from 'sourceCode'
-import TokenType from './tokenType'
+import type { Character } from "sourceCode";
+import type SourceCode from "sourceCode";
+import type TokenType from "./tokenType";
 
 abstract class Token {
-  private character: Character
+  private character: Character;
 
-  readonly type: TokenType
+  readonly type: TokenType;
 
-  get cursor () {
-    return this.character.cursor
+  get cursor() {
+    return this.character.cursor;
   }
 
-  get line () {
-    return this.character.line
+  get line() {
+    return this.character.line;
   }
 
-  get value () {
-    return this.character.value
+  get value() {
+    return this.character.value;
   }
 
-  constructor (character: Character, type: TokenType) {
-    this.character = character
-    this.type = type
+  constructor(character: Character, type: TokenType) {
+    this.character = character;
+    this.type = type;
   }
 
-  subscribeIn (tokens: Array<Token>): Token {
-    tokens.push(this)
-    return this
+  subscribeIn(tokens: Array<Token>): Token {
+    tokens.push(this);
+    return this;
   }
 
-  static from: (sourceCode: SourceCode) => Token
+  static from: (sourceCode: SourceCode) => Token;
 
-  static is: (sourceCode: SourceCode) => boolean
+  static is: (sourceCode: SourceCode) => boolean;
 }
 
-export default Token
+export default Token;

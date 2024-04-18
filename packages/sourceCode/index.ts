@@ -1,2 +1,2 @@
-export { default } from './sourceCode'
-export type { Character } from './character'
+export { default } from "./sourceCode";
+export type { Character } from "./character";

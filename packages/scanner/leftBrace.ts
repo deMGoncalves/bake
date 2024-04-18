@@ -1,15 +1,15 @@
-import SourceCode from 'sourceCode'
-import Token from './token'
-import TokenType from './tokenType'
+import type SourceCode from "sourceCode";
+import Token from "./token";
+import TokenType from "./tokenType";
 
 class LeftBrace extends Token {
-  static from (sourceCode: SourceCode): LeftBrace {
-    return new LeftBrace(sourceCode.shift(), TokenType.LEFT_BRACE)
+  static from(sourceCode: SourceCode): LeftBrace {
+    return new LeftBrace(sourceCode.shift(), TokenType.LEFT_BRACE);
   }
 
-  static is (sourceCode: SourceCode): boolean {
-    return sourceCode.peek === '{'
+  static is(sourceCode: SourceCode): boolean {
+    return sourceCode.peek === "{";
   }
 }
 
-export default LeftBrace
+export default LeftBrace;
