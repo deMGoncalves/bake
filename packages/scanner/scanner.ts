@@ -27,12 +27,12 @@ class Scanner {
 
     while (sourceCode.notDone) {
       [
-        // Two character tokens
+        // Double-character tokens
         Equality,
         GreaterThenOrEqual,
         Inequality,
 
-        // One character tokens
+        // Single-character tokens
         Addition,
         Assignment,
         Comma,
