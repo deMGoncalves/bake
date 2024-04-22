@@ -21,6 +21,7 @@ import Subtraction from "./subtraction";
 import Tab from "./tab";
 import type Token from "./token";
 import WhiteSpace from "./whiteSpace";
+import LessThen from "./lessThen";
 
 class Scanner {
   static run(sourceCode: SourceCode): Array<Token> {
@@ -43,6 +44,7 @@ class Scanner {
         GreaterThen,
         LeftBrace,
         LeftParen,
+        LessThen,
         Multiplication,
         Not,
         RightBrace,
