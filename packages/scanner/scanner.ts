@@ -2,6 +2,7 @@ import type SourceCode from "sourceCode";
 import Addition from "./addition";
 import And from "./and";
 import Assignment from "./assignment";
+import Class from "./class";
 import Comma from "./comma";
 import Division from "./division";
 import Dot from "./dot";
@@ -32,6 +33,7 @@ class Scanner {
       [
         // Keywords
         And,
+        Class,
 
         // Double-character tokens
         Equality,
