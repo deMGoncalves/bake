@@ -9,6 +9,7 @@ import Dot from "./dot";
 import Else from "./else";
 import Equality from "./equality";
 import False from "./false";
+import FunctionExpression from './function';
 import GreaterThen from "./greaterThen";
 import GreaterThenOrEqual from "./greaterThenOrEqual";
 import Inequality from "./inequality";
@@ -38,6 +39,7 @@ class Scanner {
         Class,
         Else,
         False,
+        FunctionExpression,
 
         // Double-character tokens
         Equality,
