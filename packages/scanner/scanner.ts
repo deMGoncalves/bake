@@ -10,6 +10,7 @@ import GreaterThenOrEqual from "./greaterThenOrEqual";
 import Inequality from "./inequality";
 import LeftBrace from "./leftBrace";
 import LeftParen from "./leftParen";
+import LessThen from "./lessThen";
 import LessThenOrEqual from "./lessThenOrEqual";
 import Multiplication from "./multiplication";
 import NewLine from "./newLine";
@@ -21,7 +22,6 @@ import Subtraction from "./subtraction";
 import Tab from "./tab";
 import type Token from "./token";
 import WhiteSpace from "./whiteSpace";
-import LessThen from "./lessThen";
 
 class Scanner {
   static run(sourceCode: SourceCode): Array<Token> {
