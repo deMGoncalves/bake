@@ -6,6 +6,7 @@ import Class from "./class";
 import Comma from "./comma";
 import Division from "./division";
 import Dot from "./dot";
+import Else from "./else";
 import Equality from "./equality";
 import GreaterThen from "./greaterThen";
 import GreaterThenOrEqual from "./greaterThenOrEqual";
@@ -34,6 +35,7 @@ class Scanner {
         // Keywords
         And,
         Class,
+        Else,
 
         // Double-character tokens
         Equality,
