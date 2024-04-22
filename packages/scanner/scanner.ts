@@ -10,6 +10,7 @@ import GreaterThenOrEqual from "./greaterThenOrEqual";
 import Inequality from "./inequality";
 import LeftBrace from "./leftBrace";
 import LeftParen from "./leftParen";
+import LessThenOrEqual from "./lessThenOrEqual";
 import Multiplication from "./multiplication";
 import NewLine from "./newLine";
 import Not from "./not";
@@ -31,6 +32,7 @@ class Scanner {
         Equality,
         GreaterThenOrEqual,
         Inequality,
+        LessThenOrEqual,
 
         // Single-character tokens
         Addition,
