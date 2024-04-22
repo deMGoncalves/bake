@@ -8,6 +8,7 @@ import Division from "./division";
 import Dot from "./dot";
 import Else from "./else";
 import Equality from "./equality";
+import False from "./false";
 import GreaterThen from "./greaterThen";
 import GreaterThenOrEqual from "./greaterThenOrEqual";
 import Inequality from "./inequality";
@@ -36,6 +37,7 @@ class Scanner {
         And,
         Class,
         Else,
+        False,
 
         // Double-character tokens
         Equality,
