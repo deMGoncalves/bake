@@ -1,5 +1,6 @@
 import type SourceCode from "sourceCode";
 import Addition from "./addition";
+import And from "./and";
 import Assignment from "./assignment";
 import Comma from "./comma";
 import Division from "./division";
@@ -29,6 +30,9 @@ class Scanner {
 
     while (sourceCode.notDone) {
       [
+        // Keywords
+        And,
+
         // Double-character tokens
         Equality,
         GreaterThenOrEqual,
