@@ -6,8 +6,8 @@ enum TokenType {
   LESS_THEN_OR_EQUAL = 3,
 
   // Single-character tokens
-  ASSIGNMENT = 4,
-  ADDITION = 5,
+  ADDITION = 4,
+  ASSIGNMENT = 5,
   COMMA = 6,
   DIVISION = 7,
   DOT = 8,
