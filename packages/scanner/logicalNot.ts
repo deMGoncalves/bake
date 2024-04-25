@@ -2,9 +2,9 @@ import type SourceCode from "sourceCode";
 import Token from "./token";
 import TokenType from "./tokenType";
 
-class Not extends Token {
-  static from(sourceCode: SourceCode): Not {
-    return new Not(sourceCode.shift(), TokenType.NOT);
+class LogicalNot extends Token {
+  static from(sourceCode: SourceCode): LogicalNot {
+    return new LogicalNot(sourceCode.shift(), TokenType.NOT);
   }
 
   static is(sourceCode: SourceCode): boolean {
@@ -12,4 +12,4 @@ class Not extends Token {
   }
 }
 
-export default Not;
+export default LogicalNot;

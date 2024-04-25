@@ -17,9 +17,9 @@ import LeftParen from "./leftParen";
 import LessThen from "./lessThen";
 import LessThenOrEqual from "./lessThenOrEqual";
 import LogicalAnd from "./logicalAnd";
+import LogicalNot from "./logicalNot";
 import Multiplication from "./multiplication";
 import NewLine from "./newLine";
-import Not from "./not";
 import RightBrace from "./rightBrace";
 import RightParen from "./rightParen";
 import Semicolon from "./semicolon";
@@ -57,8 +57,8 @@ class Scanner {
         LeftBrace,
         LeftParen,
         LessThen,
+        LogicalNot,
         Multiplication,
-        Not,
         RightBrace,
         RightParen,
         Subtraction,
