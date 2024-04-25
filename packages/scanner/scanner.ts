@@ -1,15 +1,14 @@
 import type SourceCode from "sourceCode";
 import Addition from "./addition";
-import And from "./and";
 import Assignment from "./assignment";
-import Class from "./class";
+import ClassExpression from "./classExpression";
 import Comma from "./comma";
 import Division from "./division";
 import Dot from "./dot";
 import Else from "./else";
 import Equality from "./equality";
 import False from "./false";
-import FunctionExpression from './function';
+import FunctionExpression from "./functionExpression";
 import GreaterThen from "./greaterThen";
 import GreaterThenOrEqual from "./greaterThenOrEqual";
 import Inequality from "./inequality";
@@ -17,6 +16,7 @@ import LeftBrace from "./leftBrace";
 import LeftParen from "./leftParen";
 import LessThen from "./lessThen";
 import LessThenOrEqual from "./lessThenOrEqual";
+import LogicalAnd from "./logicalAnd";
 import Multiplication from "./multiplication";
 import NewLine from "./newLine";
 import Not from "./not";
@@ -35,11 +35,11 @@ class Scanner {
     while (sourceCode.notDone) {
       [
         // Keywords
-        And,
-        Class,
+        ClassExpression,
         Else,
         False,
         FunctionExpression,
+        LogicalAnd,
 
         // Double-character tokens
         Equality,
