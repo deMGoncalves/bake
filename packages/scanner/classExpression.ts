@@ -2,9 +2,9 @@ import type SourceCode from "sourceCode";
 import Token from "./token";
 import TokenType from "./tokenType";
 
-class Class extends Token {
-  static from(sourceCode: SourceCode): Class {
-    return new Class(sourceCode.take(5), TokenType.CLASS);
+class ClassExpression extends Token {
+  static from(sourceCode: SourceCode): ClassExpression {
+    return new ClassExpression(sourceCode.take(5), TokenType.CLASS);
   }
 
   static is(sourceCode: SourceCode): boolean {
@@ -12,4 +12,4 @@ class Class extends Token {
   }
 }
 
-export default Class;
+export default ClassExpression;
