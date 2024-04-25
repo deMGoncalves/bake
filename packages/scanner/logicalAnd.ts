@@ -2,9 +2,9 @@ import type SourceCode from "sourceCode";
 import Token from "./token";
 import TokenType from "./tokenType";
 
-class And extends Token {
-  static from(sourceCode: SourceCode): And {
-    return new And(sourceCode.take(2), TokenType.AND);
+class LogicalAnd extends Token {
+  static from(sourceCode: SourceCode): LogicalAnd {
+    return new LogicalAnd(sourceCode.take(2), TokenType.AND);
   }
 
   static is(sourceCode: SourceCode): boolean {
@@ -12,4 +12,4 @@ class And extends Token {
   }
 }
 
-export default And;
+export default LogicalAnd;
